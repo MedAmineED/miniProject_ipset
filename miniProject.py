@@ -30,7 +30,7 @@ def remplir(n):
             
 
 
-def suprimer():
+def supprimer(tab):
     print("Pour supprimer un produit par son reference, saisissez 'ref'.")
     print("Pour supprimer un produit par son nom, saisissez 'nom'.")
     print( "Pour supprimer tous les produits d'une catégorie, tapez 'cat'.")
@@ -77,7 +77,7 @@ def suprimer():
 
 
 
-def trie(n, direction):
+def trie(n, direction, tab):
     print("--- pour trie en fonction de prix d'achat taper 'achat'")
     print("--- pour trie en fonction de prix de vente taper 'vente'")
     print("--- pour trie en fonction de prix de date taper 'date'")
@@ -85,8 +85,8 @@ def trie(n, direction):
     while not(tr == "vente" or tr == "achat" or tr == "date"):
             tr = input("cette action n'est pas valide!!! taper une action valide ('achat' ou 'vente') --: ")
     
-    for i in range(0, n - 1):
-        for j in range(i + 1, n):
+    for i in range(0, len(tab) - 1):
+        for j in range(i + 1, len(tab)):
             condition = False
             if(direction == "CR"):
                 condition = tab[i][tr] < tab[j][tr]
@@ -121,15 +121,22 @@ def recherche(n) :
     
     rech = input("Choisissez le  " + rechercheAction + " de produits que vous souhaitez afficher : ")
     print("-----------------------------------------")
+    x = 0
     for i in range(0, n):
         if(tab[i][rechercheAction] == rech):
-            print(tab[i]["ref"])
-            print(tab[i]["nom"])
-            print(tab[i]["cat"])
-            print(tab[i]["achat"])
-            print(tab[i]["vente"])
+            x += 1
             print("-----------------------------------------")
-            
+            print("- reference : ",tab[i]["ref"])
+            print("- nom de produit : ",tab[i]["nom"])
+            print("- categorie : ",tab[i]["cat"])
+            print("- prix d'achat : ",tab[i]["achat"])
+            print("- prix de vente : ",tab[i]["vente"])
+            print("date d'ajout : ", tab[i]["date"])
+            print("-----------------------------------------")
+    if(x == 0):
+        print("-----------------------------------------")
+        print("ce produit n'existe pas !!!!!!!!!!")   
+        print("-----------------------------------------")   
             
 
 
@@ -183,13 +190,13 @@ while(exit == False):
                             nbrAjout = int(input("saisir le nombre des produits que vous voulez ajouter"))
                             tab = remplir(nbrAjout)
                 elif (action == "CR" or action == "DCR"):
-                            tab = trie(n, action)
+                            tab = trie(n, action, tab)
                             afficher(tab)
                 if(action == "CHR"):
                             recherche(n)
                             print("-----------------------------------------")
                 if(action == "SPR"):
-                            tab = suprimer(tab)
+                            tab = supprimer(tab)
                 if(action == "EXIT"):
                             exit = True
             
