@@ -30,16 +30,40 @@ def remplir(n):
             
 
 
-def suprimer(tab):
+def suprimer():
     print("Pour supprimer un produit par son reference, saisissez 'ref'.")
     print("Pour supprimer un produit par son nom, saisissez 'nom'.")
     print( "Pour supprimer tous les produits d'une catégorie, tapez 'cat'.")
     print("-----------------------------------------")
     sprOption = input( "Veuillez saisir votre choix de suppression.")
+    
+    
     while not(sprOption == "ref" or sprOption == "nom" or sprOption == "cat"):
-        sprOption = input( "SLP!!  Veuillez saisir votre choix de suppression. (delr , deln or delc)")
-        
+        sprOption = input( "SLP!!  Veuillez saisir votre choix de suppression. (ref ,nom or cat)")
+    
+    
+    
+    
+    sprNom = input("Veuillez saisir la référence du produit que vous souhaitez supprimer.")
+    x = 0
+    newTab = []
+    
     for i in range(0, len(tab)):
+        if(tab[i][sprOption] != sprNom):
+            newTab.append(tab[i])
+            x += 1
+    if(x <= 0):
+        print("ce produit n'existe pas")
+    else :
+        print("suppression réussie.")
+        tab = newTab
+    
+    return tab
+            
+            
+        
+            
+                
         
         
     
@@ -144,11 +168,12 @@ while(exit == False):
                 print("pour trier le produit croissant taper CR")
                 print("pour trier le produit decroissant taper DCR")
                 print("pour chercher dans les produits taper CHR")
+                print("pour supprimer dans les produits taper SPR")
                 print("pour exit le programme taper EXIt")
                 print("-----------------------------------------")
 
                 action = input("choisissez votre action : ")
-                while not(action == "AF" or action == "AJ" or action == "CR" or action == "DCR" or action == "CHR" or action == "EXIT"):
+                while not(action == "AF" or action == "AJ" or action == "CR" or action == "DCR" or action == "CHR" or action == "EXIT" or action == "SPR"):
                             action = input("SLV !!, choisissez une action valide : ")
                 print("######################################")
 
@@ -163,6 +188,8 @@ while(exit == False):
                 if(action == "CHR"):
                             recherche(n)
                             print("-----------------------------------------")
+                if(action == "SPR"):
+                            tab = suprimer(tab)
                 if(action == "EXIT"):
                             exit = True
             
