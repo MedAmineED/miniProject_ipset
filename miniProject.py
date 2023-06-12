@@ -77,7 +77,7 @@ def supprimer(tab):
 
 
 
-def trie(n, direction, tab):
+def trie(direction, tab):
     print("--- Pour trier par prix d'achat, tapez 'achat'.")
     print("--- Pour trier par prix de vente, tapez 'vente'.")
     print("--- Pour trier par date, tapez 'date'.")
@@ -106,7 +106,7 @@ def trie(n, direction, tab):
 
 
 
-def recherche(n) :
+def recherche() :
     print("--- Pour rechercher par référence, tapez 'ref' : ")
     print("--- Pour rechercher par nom, tapez 'nom' : ")
     print("--- Pour rechercher par catégorie, tapez 'cat' : ")
@@ -124,7 +124,7 @@ def recherche(n) :
     rech = input("Choisissez le  " + rechercheAction + " de produits que vous souhaitez afficher : ")
     print("-----------------------------------------")
     x = 0
-    for i in range(0, n):
+    for i in range(0, len(tab)):
         if(tab[i][rechercheAction] == rech):
             x += 1
             print("-----------------------------------------")
@@ -192,10 +192,10 @@ while(exit == False):
                             nbrAjout = int(input("--- Saisir le nombre de produits que vous souhaitez ajouter : "))
                             tab = remplir(nbrAjout)
                 elif (action == "CR" or action == "DCR"):
-                            tab = trie(n, action, tab)
+                            tab = trie(action, tab)
                             afficher(tab)
                 if(action == "CHR"):
-                            recherche(n)
+                            recherche()
                             print("-----------------------------------------")
                 if(action == "SPR"):
                             tab = supprimer(tab)
