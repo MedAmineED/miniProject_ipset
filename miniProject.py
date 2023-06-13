@@ -27,6 +27,52 @@ def remplir(n):
         tab.append(produit)
         print("-----------------------------------------")
     return tab 
+
+
+
+def modifier():
+    mdNom = input("--- Veuillez saisir le nom du produit que vous souhaitez modifier : ")
+    x = 0
+    index = 0
+    for i in range(0, len(tab)):
+        if(tab[i]["nom"] == mdNom):
+            print("-----------------------------------------")
+            print("- Référence : ", tab[i]["ref"])
+            print("- Nom du produit : ", tab[i]["nom"])
+            print("- Catégorie : ", tab[i]["cat"])
+            print("- Prix d'achat : ", tab[i]["achat"])
+            print("- Prix de vente : ", tab[i]["vente"])
+            print("- Date d'ajout : ", tab[i]["date"])
+            print("-----------------------------------------")
+            x += 1
+            index = i
+            break
+    print("Pour modifier la reference de produit, saisissez 'ref' : ")
+    print("Pour modifier le nom de produit, saisissez 'nom' : ")
+    print("Pour modifier la categorie de produit, saisissez 'cat' : ")
+    print("Pour modifier le prix d'achat de produit, saisissez 'achat' : ")
+    print("Pour modifier le prix de vente de produit, saisissez 'ref' : ")
+    print("-----------------------------------------")
+    if(x > 0):
+        att = input("Veuillez saisir la  caracteristique du produit que vous souhaitez modifier : ")
+
+        while not(att == "ref" or att == "nom" or att == "cat" or att == "achat" or att == "vente"):
+            att = input("Cette Caracteristique n'existe pas!!! Veuillez saisir la  caracteristique du produit que vous souhaitez modifier : ")
+        newName = input("----- Tapez nouvelle caractéristique -- : ")
+
+        tab[index][att] = newName
+        print("#######################")
+        print("La modification réussie.")
+        print("#######################")
+    else :
+        print("#######################")
+        print("ce produit n'existe pas !!")
+        print("#######################")
+    
+    return tab
+    
+    
+            
             
 
 
@@ -44,7 +90,7 @@ def supprimer(tab):
     
     
     
-    sprNom = input("Veuillez saisir la référence du produit que vous souhaitez supprimer : ")
+    sprNom = input("Veuillez saisir la " + sprOption + " du produit que vous souhaitez supprimer : ")
     x = 0
     newTab = []
     
@@ -174,6 +220,7 @@ exit = False
 while(exit == False):
                 print("Pour afficher tous les produits, tapez AF : ")
                 print("Pour ajouter des produits, tapez AJ : ")
+                print("Pour modifier des produits, tapez MD : ")
                 print("Pour trier les produits par ordre croissant, tapez CR : ")
                 print("Pour trier les produits par ordre décroissant, tapez DCR : ")
                 print("Pour rechercher dans les produits, tapez CHR : ")
@@ -182,7 +229,7 @@ while(exit == False):
                 print("-----------------------------------------")
 
                 action = input("--choisissez votre action : ")
-                while not(action == "AF" or action == "AJ" or action == "CR" or action == "DCR" or action == "CHR" or action == "EXIT" or action == "SPR"):
+                while not(action == "AF" or action == "AJ" or action == "CR" or action == "DCR" or action == "CHR" or action == "EXIT" or action == "SPR" or action == "MD"):
                             action = input("SLV !!, choisissez une action valide : ")
                 print("######################################")
 
@@ -197,6 +244,8 @@ while(exit == False):
                 if(action == "CHR"):
                             recherche()
                             print("-----------------------------------------")
+                if(action == "MD"):
+                            tab = modifier()
                 if(action == "SPR"):
                             tab = supprimer(tab)
                 if(action == "EXIT"):
