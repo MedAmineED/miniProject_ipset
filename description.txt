@@ -7,7 +7,7 @@ Le programme de gestion des produits en Python est un mini-projet qui offre une 
 
 Fonctionnalités clés :
 
-1- Ajouter un produit : Permet d'ajouter un nouveau produit en fournissant des informations telles que le nom du produit, le prix d'achat, le prix de vente et la quantité disponible.
+1- Ajouter un produit : Permet d'ajouter un nouveau produit en fournissant des informations telles que le nom du produit, le prix d'achat et le prix de vente.
 
 2- Modifier un produit : Permet de modifier les informations d'un produit existant, y compris son prix d'achat, son prix de vente et sa quantité disponible.
 
@@ -31,7 +31,7 @@ Key Features:
 
 1- Add a Product: Allows adding a new product by providing information such as the product name, purchase price, selling price, and available quantity.
 
-2- Modify a Product: Enables modifying the information of an existing product, including its purchase price, selling price, and available quantity.
+2- Modify a Product: Enables modifying the information of an existing product, including its purchase price, and selling price.
 
 3- Delete a Product: Allows removing a product from the product list.
 
