@@ -1,0 +1,42 @@
+En français :
+
+Titre : Gestion des produits en Python - Algorithme simple
+
+Description :
+Le programme de gestion des produits en Python est un mini-projet qui offre une solution simple pour gérer les produits d'une entreprise. Il est basé sur un algorithme.
+
+Fonctionnalités clés :
+
+1- Ajouter un produit : Permet d'ajouter un nouveau produit en fournissant des informations telles que le nom du produit, le prix d'achat, le prix de vente et la quantité disponible.
+
+2- Modifier un produit : Permet de modifier les informations d'un produit existant, y compris son prix d'achat, son prix de vente et sa quantité disponible.
+
+3- Supprimer un produit : Permet de supprimer un produit de la liste des produits.
+
+4- Rechercher un produit : Permet de rechercher un produit en fonction de son nom ou d'autres critères spécifiques.
+
+4- Trier les produits : Permet de trier les produits par prix d'achat ou par prix de vente.
+
+####################################
+
+
+In English :
+
+Title: Product Management in Python - Simple Algorithm
+
+Description:
+The Product Management program in Python is a mini-project that provides a simple solution for managing products in a business. It is based on an algorithm 
+
+Key Features:
+
+1- Add a Product: Allows adding a new product by providing information such as the product name, purchase price, selling price, and available quantity.
+
+2- Modify a Product: Enables modifying the information of an existing product, including its purchase price, selling price, and available quantity.
+
+3- Delete a Product: Allows removing a product from the product list.
+
+4- Search for a Product: Enables searching for a product based on its name or other specific criteria.
+
+5- Sort Products: Allows sorting products by purchase price or selling price.
+
+
