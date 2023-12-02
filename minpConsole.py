@@ -26,14 +26,15 @@ def remplir(n):
 
 def supprimer(tab):
     sprNom = input("Veuillez saisir le nom du produit que vous souhaitez supprimer : ")
-    x = 0
+    exist = False
     newTab = []
     
     for i in range(0, len(tab)):
-        if(tab[i]["nom"] != sprNom):
+        if(tab[i]["nom"] == sprNom):
+            exist = True
+        else:
             newTab.append(tab[i])
-            x += 1
-    if(x <= 0):
+    if(not(exist)):
         print("Ce produit n'existe pas")
     else :
         print("Suppression réussie.")
